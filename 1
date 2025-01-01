@@ -1,0 +1,47 @@
+local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/shlexware/Orion/main/source"))()
+
+-- Create the GUI window
+local Window = OrionLib:MakeWindow({
+    Name = "🗡️ MM2 Scam Trade 🔪",
+    HidePremium = false,
+    SaveConfig = true,
+    ConfigFolder = "TradeScamConfig"
+})
+
+-- Add a "Main Menu" Tab
+local MainTab = Window:MakeTab({
+    Name = "🔥 Main Menu 🔥",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+-- Freezer Button
+MainTab:AddButton({
+    Name = "❄️ Freeze Victim's time 🧊",
+    Callback = function()
+        print("Freezer option selected!")
+        OrionLib:MakeNotification({
+            Name = "❄️ Freeze Activated",
+            Content = "The victim's time is frozen!",
+            Image = "rbxassetid://4483345998",
+            Time = 5
+        })
+    end
+})
+
+-- Trader Button
+MainTab:AddButton({
+    Name = "🤝 Trade 💰",
+    Callback = function()
+        print("Trader option selected!")
+        OrionLib:MakeNotification({
+            Name = "🤝 Trader Activated",
+            Content = "You have activated the Trader option!",
+            Image = "rbxassetid://4483345998",
+            Time = 5
+        })
+    end
+})
+
+-- Initialize the GUI
+OrionLib:Init()
